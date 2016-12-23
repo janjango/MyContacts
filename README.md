@@ -12,5 +12,6 @@ MyContacts is a Symfony3 application designed to manage user's contacts. Simply 
 That is all. Go to http://127.0.0.1:8000/ and enjoy it.
 #TODO
 - Add admin panel
+- Deploy it on heroku
 - Connect with social networks (facebook, google and twitter)
 - Import social networks contacts
