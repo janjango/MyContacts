@@ -1,6 +1,8 @@
 # MyContacts App
 MyContacts is a Symfony3 application designed to manage user's contacts. Simply and easy to use.
 # Installation
+- `git clone https://github.com/janjango/MyContacts.git`
+- `cd MyContacts`
 - `composer update`
 - `php bin/console doctrine:database:create`
 - `php bin/console doctrine:schema:update --force`
