@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}  <i class="fa fa-phone"> </i>   Contact Edition {% endblock %}
+
+{% block content %}
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <i class="fa fa-phone"> </i> Contact
+            </div>
+            <div class="panel-body">
+
+                {{ form_start(edit_form) }}
+                {{ form_widget(edit_form) }}
+              <button type="submit" class="btn btn-warning btn-xs"  style="float: right;margin-top: 2%;"> <i class="fa fa-save"> </i> Modifier</button>
+                {{ form_end(edit_form) }}
+                
+            </div>
+                <div class="panel-footer">
+                    
+                           <a href="{{ path('contact_index') }}" class="btn btn-default btn-xs"> <i class="fa fa-arrow-left"> </i> Back to the list</a>
+                         
+                </div>
+        </div>
+    {% endblock %}

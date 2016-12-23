@@ -1,0 +1,51 @@
+{% extends "JacUserBundle::layout.html.twig" %}
+
+{# Le titre de l'entête du document #}
+{% block entetetitle %}Connexion | {{ parent() }}{% endblock %}
+
+{% block titre %} Connexion  <span style="font-size: 12px;float: right; color: #720e9e;">  <i class="fa fa-phone"> </i> MyContacts </span>{% endblock  %}
+
+{% block fos_user_content %}
+
+    {% trans_default_domain 'FOSUserBundle' %}
+
+    <form role="form" action="{{ path("fos_user_security_check") }}" method="post"  >
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        <fieldset>
+            <div class="form-group">
+                <div class=" col-md-6">
+                    <label class="required" for="username">Nom d'utilisateur ou email</label>
+                </div>
+                <div class=" col-md-6">
+                    <input type="text" class="form-control col-md-6" id="username" name="_username" value="{{ last_username }}" required="required">
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class=" col-md-6">
+                    <label class="required" for="password">Mot de passe</label>
+                </div>
+                <div class=" col-md-6">
+                    <input type="password" class="form-control" id="password" name="_password" required="required">
+                </div>
+
+
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" class="" name="remember_me" id="remember_me" checked="checked">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+                </label>
+
+            </div>
+            <div class="row text-center">
+                <button class="btn btn-sm btn-success " type="submit">Connectez - vous</button> ou
+                <a href="{{ path("fos_user_resetting_request") }}">{{ 'security.forgotpassword'|trans({}, 'FOSUserBundle') }}</a>
+            </div>
+
+        </fieldset>
+    </form>
+
+{% endblock  %}

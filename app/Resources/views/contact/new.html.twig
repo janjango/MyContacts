@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}  <i class="fa fa-phone"> </i> Création de contact {% endblock %}
+
+{% block content %}
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <i class="fa fa-phone"> </i> Nouveau Contact
+            </div>
+            <div class="panel-body">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button type="submit" class="btn btn-success btn-xs" style="float: right;margin-top: 2%;"> <i class="fa fa-save"> </i> Enregistrer</button>
+                {{ form_end(form) }}
+            </div>
+            <div class="panel-footer">
+                <a href="{{ path('contact_index') }}" class="btn btn-default btn-xs"> <i class="fa fa-arrow-left"> </i> Retour à la liste </a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
