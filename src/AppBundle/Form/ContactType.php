@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 class ContactType extends AbstractType {
 
@@ -29,6 +30,8 @@ class ContactType extends AbstractType {
                     'attr' => array('class' => 'form-control ')))
                 ->add('website', TextType::class, array('label' => 'site web ',
                     'attr' => array('class' => 'form-control', 'placeholder' => 'http://domain.com')))
+                ->add('age', IntegerType::class, array('label' => 'Age ',
+                    'attr' => array('class' => 'form-control', 'placeholder' => '10')))
         ;
     }
 

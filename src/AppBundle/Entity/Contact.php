@@ -71,8 +71,21 @@ class Contact {
      * @ORM\Column(name="website")
      * @Assert\Url()
      */
-    protected $website;
+    private $website;
 
+    /**
+     * @var integer The age of the contact.
+     * @ORM\Column(name="age", type="integer")
+     * @Assert\Type(type="integer")
+     */
+    private $age;
+    
+    /**
+     * @var createAt la date de creation du contact.
+     * @ORM\Column(type="datetime")
+     */
+    private $createAt;
+    
     /**
      * @ORM\ManyToOne(targetEntity="Jac\UserBundle\Entity\User", inversedBy="contacts")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
@@ -281,4 +294,45 @@ class Contact {
     {
         return $this->activities;
     }
+    
+    /**
+     * Set createdAt
+     * *
+     * @ORM\PrePersist
+     */
+    public function setCreateat() {
+        $this->createAt = new \DateTime();
+    }
+    
+    /**
+     * Get createAt
+     *
+     * @return \DateTime
+     */
+    public function getCreateAt() {
+        return $this->createAt;
+    }
+    
+    /**
+     * Set age
+     *
+     * @param integer $age
+     *
+     * @return Contact
+     */
+    public function setAge($age) {
+        $this->age = $age;
+
+        return $this;
+    }
+
+    /**
+     * Get age
+     *
+     * @return integer
+     */
+    public function getAge() {
+        return $this->age;
+    }
+
 }

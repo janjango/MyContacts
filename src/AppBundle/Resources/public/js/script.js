@@ -2,8 +2,13 @@
  * Eneable dataTables
  */
 
-$(document).ready(function () {
+$(document).ready(function() {
     $('#dataTables-example').DataTable({
-        responsive: true
+        responsive: true,
+        columDefs: [{
+                targets: [5],
+                orderData: [5, 4]
+            }
+        ]
     });
 });

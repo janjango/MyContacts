@@ -35,8 +35,12 @@
                             <td>{{ contact.website }}</td>
                         </tr>
                         <tr>
-                            <th>Profession</th>
-                            <td>{{ contact.profession }}</td>
+                            <th>Age</th>
+                            <td>{{ contact.age }}</td>
+                        </tr>
+                        <tr>
+                            <th>Date Création</th>
+                            <td>{{ contact.createAt|date('d-M-Y') }}</td>
                         </tr>
                     </tbody>
                 </table>
